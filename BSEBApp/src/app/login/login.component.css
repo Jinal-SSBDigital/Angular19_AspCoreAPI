@@ -1,0 +1,111 @@
+    html, body {
+        overflow-x: hidden; /* remove horizontal scrollbar */
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    body {
+        background-color: #eef5ff; /* light blue tint */
+        /*background: url('assets/img/bhr2.jpg') no-repeat center center fixed;*/
+        background-size: cover;
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    .header {
+        /*background: #1b2642;*/
+        background: #3059c4;
+        color: white;
+        padding: 5px 50px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .steps {
+        background: #f8f9fa;
+        padding: 2px 160px;
+        font-size: 11px;
+        font-weight: 500;
+        color: #000;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .step-line {
+        height: 1.5px;
+        background-color: #ccc;
+        margin: 0 4px;
+    }
+
+    .circle {
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    .card-grid-row {
+        min-height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-same {
+        /* remove flex:1 so width is controlled only by Bootstrap col-7/col-5 */
+        min-width: auto;
+        max-width: 100%;
+        height: 37em;
+    }
+
+    .info-card, .right-section {
+        background: #fff;
+        border-radius: 18px;
+        /* remove min-height so each card takes height based on its content */
+        box-shadow: 0 0 25px rgba(0,0,0,0.12);
+        padding: 32px 30px;
+    }
+
+    .logo_head {
+        width: 70px;
+        margin: 0 auto 12px auto;
+    }
+
+    .form-control {
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .captcha-box {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .btn-login {
+        background-color: #3059c4;
+        border: none;
+        color: white;
+        font-weight: 600;
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-size: 15px;
+    }
+
+        .btn-login:hover {
+            background-color: #e66000;
+        }
+
+    @media(max-width: 991px) {
+        .card-grid-row {
+            flex-direction: column;
+        }
+    }

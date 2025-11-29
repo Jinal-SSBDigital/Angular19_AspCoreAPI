@@ -1,0 +1,152 @@
+<!-- Header -->
+<div class="row">
+  <div class="header d-flex justify-content-between align-items-center px-3 py-2">
+
+    <div class="col-lg-8">
+      <div class="align-items-center d-flex justify-content-center">
+        <img src="assets/img/bsebimage2.png" alt="Logo" style="width: 45px; margin-right: 8px;">
+        <h5 class="mb-0 fw-bold">BIHAR SCHOOL EXAMINATION BOARD</h5>
+      </div>
+    </div>
+
+    <div class="col-lg-4 small text-end" style="line-height: 1.4;">
+      <div><span class="fw-lighter">Help Desk No.: </span>0612-2230039</div>
+      <div><span class="fw-lighter">Help Desk Email:</span> <b>bsebinterhelpdesk&#64;gmail.com</b>
+</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Steps -->
+<div class="steps text-center py-2">
+  <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
+
+    <div class="step-item text-center">
+      <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1"
+        style="width: 28px; height: 28px;">1</div>
+      <small>Login</small>
+    </div>
+
+    <div class="step-line flex-grow-1"></div>
+
+    <div class="step-item text-center">
+      <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1"
+        style="width: 28px; height: 28px;">2</div>
+      <small>Download Examination Form</small>
+    </div>
+
+    <div class="step-line flex-grow-1"></div>
+
+    <div class="step-item text-center">
+      <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1"
+        style="width: 28px; height: 28px;">3</div>
+      <small>Examination Payment</small>
+    </div>
+
+    <div class="step-line flex-grow-1"></div>
+
+    <div class="step-item text-center">
+      <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1"
+        style="width: 28px; height: 28px;">4</div>
+      <small>Payment Status</small>
+    </div>
+
+    <div class="step-line flex-grow-1"></div>
+
+    <div class="step-item text-center">
+      <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1"
+        style="width: 28px; height: 28px;">5</div>
+      <small>Fill Examination Form</small>
+    </div>
+
+    <div class="step-line flex-grow-1"></div>
+
+    <div class="step-item text-center">
+      <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1"
+        style="width: 28px; height: 28px;">6</div>
+      <small>View Submitted Form</small>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Main Layout -->
+<div class="container-fluid">
+  <div class="row justify-content-center card-grid-row mt-3">
+
+    <!-- LEFT SECTION -->
+    <div class="col-lg-8 col-md-12 mb-4">
+      <div class="card-same right-section">
+        <h4 class="mb-3 text-center">Information And Notifications</h4>
+        <hr>
+
+        <a href="assets/Notifications/Vigyapti-for-Inter-Annual-Exam-2026.pdf"
+           download
+           class="d-block mt-4 text-primary"
+           style="font-size:25px;">
+           <i class="fas fa-file-download"></i> Click here to download Vigyapti for Intermediate Annual Examination 2026
+        </a>
+
+        <a href="javascript:void(0);" (click)="downloadAllFiles()" class="d-block mt-4 text-primary" style="font-size:25px;">
+          <i class="fas fa-file-download"></i> Click here to download all Ex-student Exam Forms
+        </a>
+
+        <a href="http://intermediate.biharboardonline.com/Exam26/StudentExamDummyCard.aspx"
+           class="d-block mt-4 text-primary" style="font-size:25px;">
+           <i class="fas fa-id-card"></i> Click here for Intermediate Dummy Admit Card (Student Login)
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT LOGIN FORM -->
+    <div class="col-lg-4 col-md-12">
+      <div class="card-same info-card text-center">
+
+        <img src="assets/img/bsebimage.jpg" class="logo_head" />
+        <h5>Bihar School Examination Board</h5>
+        <p>Intermediate Annual Examination 2026</p>
+        <hr>
+        <p><i class="fas fa-user"></i> Login to start your session</p>
+
+        <form (ngSubmit)="submitLogin()">
+
+          <!-- Username -->
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input class="form-control" placeholder="Username" [(ngModel)]="username" name="username">
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            <input class="form-control"
+                   [type]="showPass ? 'text' : 'password'"
+                   placeholder="Password"
+                   [(ngModel)]="password" name="password">
+            <button type="button" class="btn btn-outline-secondary" (click)="togglePassword()">
+              <i class="fas" [ngClass]="showPass ? 'fa-eye-slash' : 'fa-eye'"></i>
+            </button>
+          </div>
+
+          <!-- Captcha -->
+          <div class="captcha-box">
+            <span>{{num1}}</span> +
+            <span>{{num2}}</span> =
+            <input type="number" class="form-control" [(ngModel)]="captchaInput" name="captchaInput">
+            <button type="button" class="btn btn-light btn-sm" (click)="generateCaptcha()">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+          </div>
+
+          <!-- Login Button -->
+          <button class="btn btn-login mt-2">Login</button>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
