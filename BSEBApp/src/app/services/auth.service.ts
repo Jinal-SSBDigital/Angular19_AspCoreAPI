@@ -14,6 +14,7 @@ export class AuthService {
   //   return this.http.post<any>(this.apiUrl, credentials);
   // }
   login(data: any): Observable<any> {
+    debugger
     return this.http.post(this.apiUrl, data);
   }
 }
