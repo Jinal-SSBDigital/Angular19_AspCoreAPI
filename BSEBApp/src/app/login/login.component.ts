@@ -3,6 +3,9 @@ import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-login',
   standalone: true,    
@@ -23,7 +26,7 @@ export class LoginComponent {
 
   showPass = false;
 
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.generateCaptcha();
@@ -77,10 +80,12 @@ export class LoginComponent {
     this.auth.login(data).subscribe({
       next: res => {
         Swal.fire('Success', 'Login successful!', 'success');
+        this.router.navigate(['/dashboard'],{state: {fullData: res}});
       },
       error: err => {
         Swal.fire('Error', 'Invalid username or password', 'error');
       }
     });
+    
   }
 }
