@@ -1,0 +1,59 @@
+<!-- src/app/dashboard/dashboard.component.html -->
+<header class="header-bar">
+  <div class="header-left">
+    <img src="assets/img/bsebimage2.png" alt="BSEB Logo" class="logo" />
+    <h2><strong>Bihar</strong> School Examination Board</h2>
+  </div>
+  <div class="header-right">
+    <h2>
+      <a routerLink="/appmodule" class="logout-link">
+        <i class="fa fa-fw fa-th"></i> My Modules
+      </a>
+    </h2>
+
+    <a (click)="logout()" class="logout-link" title="Logout" style="cursor:pointer;">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </a>
+  </div>
+</header>
+<hr style="color:#d2d6de" />
+
+<marquee behavior="scroll" direction="left" scrollamount="3">
+  <span style="color: red;">
+    <i class="fa fa-phone"></i> Bihar School Examination Board Helpline : 0612-2230039
+  </span>
+  &nbsp;&nbsp;&nbsp;
+  <span style="color: blue;">
+    For any query related to Student's Registration please contact at
+    <a href="mailto:bsebinterhelpdesk@gmail.com">
+      <i class="fa fa-envelope"></i> bsebinterhelpdesk&#64;gmail.com
+    </a>
+  </span>
+</marquee>
+
+<div class="header-container">
+  <div class="module-heading">Assigned Module(s)</div>
+  <div class="module-heading">
+    +2 School/College Code & Name:
+    <br />
+    <span *ngIf="!isAdmin">
+      {{ collegeCode }} |
+    </span>
+    {{ collegeName }}
+  </div>
+</div>
+
+<div class="modules">
+  <!-- Student Registration (uncomment if required) -->
+  
+  <a class="module-card green" (click)="goToStudentRegistration()">
+    <div class="module-icon"><img src="assets/img/registered.gif" alt="Student Registration" /></div>
+    <div class="module-title">Student Registration</div>
+  </a>
+ 
+
+  <!-- <a class="module-card green" (click)="goToPreExam()">
+    <div class="module-icon"><img src="assets/img/question.gif" alt="Student Registration Icon" /></div>
+    <div class="module-title">Student Registration Icon</div>
+  </a> -->
+</div>
