@@ -1,0 +1,4 @@
+/* src/app/layout/layout.component.css */
+.app-root { display:flex; flex-direction:column; min-height:100vh; }
+.layout-body { display:flex; flex:1; }
+.content { flex:1; padding:20px; background:#f7f7f7; }
