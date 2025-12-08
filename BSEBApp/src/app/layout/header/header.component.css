@@ -1,0 +1,114 @@
+/* src/app/layout/header/header.component.css */
+
+/* Top bar */
+.header-bar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2f55c2; /* blue as in screenshot */
+  color: #fff;
+  padding: 0 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* left section */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* menu button (small hamburger) */
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* logo */
+.logo {
+  height: 44px;
+  width: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+/* org title */
+.title-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-left: 6px;
+  line-height: 1;
+}
+
+.title-wrap .org {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.title-wrap .sub {
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+/* right section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* small link-like buttons */
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.link-text {
+  display: none; /* hide text on small screens if you want; adjust as needed */
+}
+
+/* show text on larger widths */
+@media(min-width:900px){
+  .link-text { display:inline-block; }
+}
+
+/* logout button styled as red/orange chip like screenshot */
+.logout-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background: linear-gradient(180deg,#ff6b3c,#ff5a2d);
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor:pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  font-weight:600;
+}
+
+/* icon sizes */
+.header-right i, .menu-btn i { font-size: 14px; }
+
+/* push page content down so header doesn't overlap (add to global styles or layout) */
+:host ::ng-deep body {
+  /* If you prefer to add in layout CSS, set top padding there */
+}

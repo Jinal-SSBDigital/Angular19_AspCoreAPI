@@ -1,0 +1,32 @@
+<!-- src/app/layout/header/header.component.html -->
+<header class="header-bar">
+  <div class="header-left">
+   
+
+    <img src="assets/img/bsebimage2.png" alt="BSEB Logo" class="logo" />
+    <div class="title-wrap">
+      <div class="org">Bihar School Examination Board</div>
+     
+    </div>
+    <button class="menu-btn" aria-label="Toggle menu">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+ 
+  <div class="header-right">
+    <!-- <button class="link-btn" (click)="goToDashboard()" title="Dashboard">
+      <i class="fa fa-desktop"></i>
+      <span class="link-text">Dashboard</span>
+    </button> -->
+
+    <button class="link-btn" (click)="onMyModule()" title="My Modules">
+      <i class="fa fa-th"></i>
+      <span class="link-text">My Modules</span>
+    </button>
+
+    <button class="logout-btn" (click)="onLogout()" title="Logout">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Logout</span>
+    </button>
+  </div>
+</header>

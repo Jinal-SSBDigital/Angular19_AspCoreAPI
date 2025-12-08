@@ -78,14 +78,29 @@ export class LoginComponent {
     };
 
     this.auth.login(data).subscribe({
-      next: res => {
-        Swal.fire('Success', 'Login successful!', 'success');
-        this.router.navigate(['/dashboard'],{state: {fullData: res}});
-      },
-      error: err => {
-        Swal.fire('Error', 'Invalid username or password', 'error');
-      }
-    });
+    next: res => {
+
+      // Show success popup AND wait for user to click OK
+      Swal.fire({
+        title: 'Success',
+        text: 'Login successful!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+
+        // Redirect AFTER clicking OK
+        this.router.navigate(['/dashboard'], {
+          state: { fullData: res }
+        });
+
+      });
+
+    },
+    error: err => {
+      Swal.fire('Error', 'Invalid username or password', 'error');
+    }
+  });
+
     
   }
 }

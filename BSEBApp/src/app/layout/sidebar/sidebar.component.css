@@ -1,0 +1,83 @@
+/* src/app/layout/sidebar/sidebar.component.css */
+
+.sidebar {
+  width: 260px;
+  position: fixed;
+  top: 64px; /* match header height (adjust if different) */
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  border-right: 1px solid #e6e6e6;
+  padding: 18px 12px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Top area with logo + college name */
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 12px;
+}
+
+.sidebar-logo {
+  height: 46px;
+  width: 46px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.sidebar-college {
+  display: flex;
+  flex-direction: column;
+}
+
+.college-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #222;
+  line-height: 1.1;
+}
+
+.college-code {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Navigation */
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.sidebar-nav li {
+  margin: 8px 0;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sidebar-nav a:hover {
+  background: #f1f6ff;
+  color: #2f55c2;
+}
+
+/* Footer small note */
+.sidebar-footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
